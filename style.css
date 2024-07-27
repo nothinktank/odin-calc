@@ -1,0 +1,34 @@
+.shell{
+  display: flex;
+  background-color: dodgerblue;
+  justify-content: center;
+  padding: 20%;
+  border: medium solid black;
+ }
+ 
+ .maincolumn{
+   display: flex;
+   width: 36vw;
+   flex-wrap: wrap;
+   /*flex-direction: column;*/
+   background-color: dodgerblue;
+   border: medium dashed black;
+  }
+ 
+ .sidecolumn{
+
+   display: flex;
+ }
+
+ .display{
+  display: flex;
+  width: 35vw;
+ }
+ 
+ .regularbutton{
+  width: 9vw;;
+ }
+
+ .doublebutton{
+  width: 18vw;
+ }
