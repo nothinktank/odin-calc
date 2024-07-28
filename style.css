@@ -1,6 +1,6 @@
 .shell{
   display: flex;
-  background-color: dodgerblue;
+  background-color: aliceblue;
   justify-content: center;
   padding: 20%;
   border: medium solid black;
@@ -8,27 +8,39 @@
  
  .maincolumn{
    display: flex;
-   width: 36vw;
+   width: 43.2vw;
    flex-wrap: wrap;
    /*flex-direction: column;*/
-   background-color: dodgerblue;
-   border: medium dashed black;
+   /*background-color: dodgerblue;*/
+   border: medium solid black;
+   
   }
  
  .sidecolumn{
 
    display: flex;
+
  }
 
  .display{
   display: flex;
-  width: 35vw;
+  width: 40vw;
+  padding: 15px;
+  background-color: aliceblue;
+  font-size: x-large;
+  font-style:initial;
+  justify-content: end;
+  
  }
  
  .regularbutton{
-  width: 9vw;;
+  width: 10vw;;
+  margin: 0.4vw;
+  height: 10vh;
  }
 
  .doublebutton{
-  width: 18vw;
+  width: 20.8vw;
+  margin: 0.4vw;
+  height: 10vh;
  }
