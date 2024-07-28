@@ -14,7 +14,13 @@ function divide(a,b){
   return a / b
 }
 
+let display = document.querySelector(".display")
 
-let firstNumber //= document.querySelector()
+let firstNumber = document.querySelector("#seven")
 let calcOp 
 let secondNumber
+
+firstNumber.addEventListener("click", () => {
+  console.log('a button is clicked')
+  display.textContent = firstNumber.textContent;
+})
