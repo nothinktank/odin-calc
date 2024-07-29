@@ -14,13 +14,24 @@ function divide(a,b){
   return a / b
 }
 
-let display = document.querySelector(".display")
+let display = document.querySelector(".display");
 
-let firstNumber = document.querySelector("#seven")
+let firstAppendage = "";
 let calcOp 
-let secondNumber
+let secondAppendage = "";
 
-firstNumber.addEventListener("click", () => {
-  console.log('a button is clicked')
-  display.textContent = firstNumber.textContent;
-})
+// firstNumber.addEventListener("click", () => {
+//   console.log('a button is clicked')
+//   display.textContent = firstNumber.textContent;
+// })
+
+function operand(num){
+  firstAppendage += num;
+  display.textContent = `${firstAppendage}`;
+  
+}
+
+function operator(input){
+  
+
+}
