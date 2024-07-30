@@ -29,6 +29,7 @@
  .display{
   display: flex;
   width: 40vw;
+  height: 3vw;
   padding: 15px;
   background-color: aliceblue;
   font-size: x-large;
