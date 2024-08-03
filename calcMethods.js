@@ -37,27 +37,30 @@ function operand(num){
     secondAppendage += num
     display.textContent =  `${secondAppendage}`;
     //numForOperation = firstAppendage;
-    firstAppendage = "";
+    //firstAppendage = "";
     console.log(`first appended number is ${firstAppendage}`)
   }
 }
 
 function operator(input){
-
-  if (operationType === ""){
+  if (!firstAppendage){
+    return;
+  }else if (operationType === ""){
     operationType = input;
-    finalFirstNum = firstAppendage;
+    //finalFirstNum = firstAppendage;
     console.log(`first operator ${operationType} pressed `);
   }else{
     switch (operationType){
       case "plus": 
+        result = Number(firstAppendage) + Number(secondAppendage);
+        firstAppendage = result;
         operationType = "plus";
-        result = Number(finalFirstNum) + Number(secondAppendage);
         display.textContent = `${result}`;
+        secondAppendage = "";
         console.log("adding executed");
         //assign secondAppendage to finalFirstNum and clear secondAppendage
-        finalFirstNum = result;
-        secondAppendage = "";
+        //finalFirstNum = result;
+        
         break;
       case "minus": 
         operationType = "minus";
@@ -137,7 +140,8 @@ function equal(){
       finalFirstNum = result;
       secondAppendage = "";
       break;
-  
+      default:
+
   }
 
 }
@@ -148,10 +152,16 @@ function flipSign(){
     display.textContent = `${result}`;
     operationType = "flipSign";
   }else{
-    secondAppendage = - result;
-    result = secondAppendage;
-    display.textContent = `${result}`;
-    //operationType = "";
+    if (!secondAppendage){
+      firstAppendage = -firstAppendage;
+      display.textContent = `${firstAppendage}`;
+      operationType = "flipSign";
+    }else{
+      secondAppendage = -secondAppendage;
+      display.textContent = `${secondAppendage}`;
+      operationType = "flipSign";
+    }
+    
   }
 }
 
