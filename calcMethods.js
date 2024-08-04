@@ -1,18 +1,18 @@
-function add(a,b){
- return a + b
-}
+// function add(a,b){
+//  return a + b
+// }
 
-function subtract(a,b){
-  return a - b
-}
+// function subtract(a,b){
+//   return a - b
+// }
 
-function multiply(a,b){
-  return a * b
-}
+// function multiply(a,b){
+//   return a * b
+// }
 
-function divide(a,b){
-  return a / b
-}
+// function divide(a,b){
+//   return a / b
+// }
 
 let display = document.querySelector(".display");
 
@@ -51,34 +51,34 @@ function operator(input){
     console.log(`first operator ${operationType} pressed `);
   }else{
     switch (operationType){
-      case "plus": 
+      case 'plus': 
         result = Number(firstAppendage) + Number(secondAppendage);
         firstAppendage = result;
-        operationType = "plus";
+        operationType = input;
         display.textContent = `${result}`;
         secondAppendage = "";
         console.log("adding executed");
         break;
-      case "minus": 
+      case 'minus': 
         result = Number(firstAppendage) - Number(secondAppendage);
         firstAppendage = result;
-        operationType = "minus";
+        operationType = input;
         display.textContent = `${result}`;
         secondAppendage = "";
         console.log("subtracting executed");
         break;
-      case "times": 
+      case 'times': 
         result = Number(firstAppendage) * Number(secondAppendage);
         firstAppendage = result;
-        operationType = "times";
+        operationType = input;
         display.textContent = `${result}`;
         secondAppendage = "";
         console.log("multiplying executed");
         break;
-      case "divide": 
+      case 'divide': 
         result = Number(firstAppendage) / Number(secondAppendage);
         firstAppendage = result;
-        operationType = "divide";
+        operationType = input;
         display.textContent = `${result}`;
         secondAppendage = "";
         console.log("dividing executed");
@@ -92,6 +92,7 @@ function operator(input){
         break;
     
     }
+
   }
 }
 
@@ -101,7 +102,7 @@ function allclear(){
   operationType = "";
   secondAppendage = "";
   result = 0;
-  finalFirstNum = ""; 
+  //finalFirstNum = ""; 
   display.textContent = "0";
   console.log("ac pressed");
 }
@@ -140,11 +141,14 @@ function equal(){
       finalFirstNum = result;
       secondAppendage = "";
       break;
-      default:
+      //default:
 
   }
 
 }
+
+
+
 
 function flipSign(){
   if (operationType === ""){
