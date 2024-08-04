@@ -58,37 +58,37 @@ function operator(input){
         display.textContent = `${result}`;
         secondAppendage = "";
         console.log("adding executed");
-        //assign secondAppendage to finalFirstNum and clear secondAppendage
-        //finalFirstNum = result;
-        
         break;
       case "minus": 
+        result = Number(firstAppendage) - Number(secondAppendage);
+        firstAppendage = result;
         operationType = "minus";
-        result = Number(finalFirstNum) - Number(secondAppendage);
         display.textContent = `${result}`;
-        finalFirstNum = result;
         secondAppendage = "";
+        console.log("subtracting executed");
         break;
       case "times": 
+        result = Number(firstAppendage) * Number(secondAppendage);
+        firstAppendage = result;
         operationType = "times";
-        result = Number(finalFirstNum) * Number(secondAppendage);
         display.textContent = `${result}`;
-        finalFirstNum = result;
         secondAppendage = "";
+        console.log("multiplying executed");
         break;
       case "divide": 
+        result = Number(firstAppendage) / Number(secondAppendage);
+        firstAppendage = result;
         operationType = "divide";
-        result = Number(finalFirstNum) / Number(secondAppendage);
         display.textContent = `${result}`;
-        finalFirstNum = result;
         secondAppendage = "";
+        console.log("dividing executed");
         break;
       case "flipSign": 
         result = -( Number(secondAppendage)? Number(secondAppendage):Number(firstAppendage) );
-        console.log(result);
+        //firstAppendage = result;
         display.textContent = `${result}`;
-        finalFirstNum = result;
-        secondAppendage = "";
+        secondAppendage = result;
+        //secondAppendage = "";
         break;
     
     }
@@ -109,7 +109,7 @@ function allclear(){
 function equal(){
   switch (operationType){
     case "plus": 
-      result = Number(finalFirstNum) + Number(secondAppendage);
+      result = Number(firstAppendage) + Number(secondAppendage);
       display.textContent = `${result}`;
       console.log("adding executed");
       //assign secondAppendage to finalFirstNum and clear secondAppendage
@@ -117,19 +117,19 @@ function equal(){
       secondAppendage = "";
       break;
     case "minus": 
-      result = Number(finalFirstNum) - Number(secondAppendage);
+      result = Number(firstAppendage) - Number(secondAppendage);
       display.textContent = `${result}`;
       finalFirstNum = result;
       secondAppendage = "";
       break;
     case "times": 
-      result = Number(finalFirstNum) * Number(secondAppendage);
+      result = Number(firstAppendage) * Number(secondAppendage);
       display.textContent = `${result}`;
       finalFirstNum = result;
       secondAppendage = "";
       break;
     case "divide": 
-      result = Number(finalFirstNum) / Number(secondAppendage);
+      result = Number(firstAppendage) / Number(secondAppendage);
       display.textContent = `${result}`;
       finalFirstNum = result;
       secondAppendage = "";
@@ -148,9 +148,10 @@ function equal(){
 
 function flipSign(){
   if (operationType === ""){
-    result = -(Number(firstAppendage))
+    result = -(Number(firstAppendage));
+    firstAppendage = result;
     display.textContent = `${result}`;
-    operationType = "flipSign";
+    //operationType = "flipSign";
   }else{
     if (!secondAppendage){
       firstAppendage = -firstAppendage;
