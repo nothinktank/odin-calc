@@ -43,7 +43,7 @@ function operand(num){
 }
 
 function operator(input){
-  if (!firstAppendage){
+  if (firstAppendage.length === 0){
     return;
   }else if (operationType === ""){
     operationType = input;
@@ -52,6 +52,9 @@ function operator(input){
   }else{
     switch (operationType){
       case 'plus': 
+        
+        console.log(`first num is ${firstAppendage} and second num is ${secondAppendage}`);
+
         result = Number(firstAppendage) + Number(secondAppendage);
         firstAppendage = result;
         operationType = input;
@@ -59,7 +62,10 @@ function operator(input){
         secondAppendage = "";
         console.log("adding executed");
         break;
-      case 'minus': 
+      case 'subtract': 
+        console.log(!firstAppendage); 
+        console.log(`first num is ${firstAppendage} and second num is ${secondAppendage}`);
+
         result = Number(firstAppendage) - Number(secondAppendage);
         firstAppendage = result;
         operationType = input;
@@ -68,6 +74,8 @@ function operator(input){
         console.log("subtracting executed");
         break;
       case 'times': 
+        console.log(`first num is ${firstAppendage} and second num is ${secondAppendage}`);
+
         result = Number(firstAppendage) * Number(secondAppendage);
         firstAppendage = result;
         operationType = input;
@@ -76,6 +84,8 @@ function operator(input){
         console.log("multiplying executed");
         break;
       case 'divide': 
+        console.log(`first num is ${firstAppendage} and second num is ${secondAppendage}`);
+
         result = Number(firstAppendage) / Number(secondAppendage);
         firstAppendage = result;
         operationType = input;
@@ -117,7 +127,7 @@ function equal(){
       finalFirstNum = result;
       secondAppendage = "";
       break;
-    case "minus": 
+    case 'subtract': 
       result = Number(firstAppendage) - Number(secondAppendage);
       display.textContent = `${result}`;
       finalFirstNum = result;
