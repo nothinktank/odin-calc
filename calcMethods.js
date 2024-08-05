@@ -21,7 +21,7 @@ let operationType = "";
 let secondAppendage = "";
 //let numForOperation = "";
 let result = 0;
-let finalFirstNum;
+//let finalFirstNum;
 
 // firstNumber.addEventListener("click", () => {
 //   console.log('a button is clicked')
@@ -43,7 +43,7 @@ function operand(num){
 }
 
 function operator(input){
-  if (firstAppendage.length === 0){
+  if (String(firstAppendage).length === 0){
     return;
   }else if (operationType === ""){
     operationType = input;
@@ -63,7 +63,7 @@ function operator(input){
         console.log("adding executed");
         break;
       case 'subtract': 
-        console.log(!firstAppendage); 
+        
         console.log(`first num is ${firstAppendage} and second num is ${secondAppendage}`);
 
         result = Number(firstAppendage) - Number(secondAppendage);
@@ -94,11 +94,16 @@ function operator(input){
         console.log("dividing executed");
         break;
       case "flipSign": 
-        result = -( Number(secondAppendage)? Number(secondAppendage):Number(firstAppendage) );
-        //firstAppendage = result;
-        display.textContent = `${result}`;
-        secondAppendage = result;
-        //secondAppendage = "";
+        console.log(`first num is ${firstAppendage} and second num is ${secondAppendage}`);
+        // result = -( Number(secondAppendage)? Number(secondAppendage):Number(firstAppendage) );
+        // //firstAppendage = result;
+        // display.textContent = `${result}`;
+        // secondAppendage = result;
+        // //secondAppendage = "";
+
+        operationType = input;
+        console.log("displayed number sign flipped");
+
         break;
     
     }
@@ -146,10 +151,11 @@ function equal(){
       secondAppendage = "";
       break;
     case "flipSign": 
-      result = -(Number(secondAppendage));
-      display.textContent = `${result}`;
-      finalFirstNum = result;
-      secondAppendage = "";
+      // result = -(Number(secondAppendage));
+      // display.textContent = `${result}`;
+      // finalFirstNum = result;
+      // secondAppendage = "";
+      operationType = input;
       break;
       //default:
 
@@ -161,21 +167,24 @@ function equal(){
 
 
 function flipSign(){
-  if (operationType === ""){
-    result = -(Number(firstAppendage));
-    firstAppendage = result;
-    display.textContent = `${result}`;
+  if (String(firstAppendage).length === 0){
+    firstAppendage = -(Number(firstAppendage));
+    //firstAppendage = result;
+    display.textContent = `${firstAppendage}`;
     //operationType = "flipSign";
   }else{
-    if (!secondAppendage){
-      firstAppendage = -firstAppendage;
-      display.textContent = `${firstAppendage}`;
-      operationType = "flipSign";
-    }else{
-      secondAppendage = -secondAppendage;
-      display.textContent = `${secondAppendage}`;
-      operationType = "flipSign";
-    }
+    // if (secondAppendage.length === 0){
+    //   firstAppendage = -firstAppendage;
+    //   display.textContent = `${firstAppendage}`;
+    //   operationType = "flipSign";
+    // }else{
+    //   secondAppendage = -secondAppendage;
+    //   display.textContent = `${secondAppendage}`;
+    //   operationType = "flipSign";
+    // }
+    
+    secondAppendage = -(Number(secondAppendage));
+    display.textContent = `${secondAppendage}`;
     
   }
 }
