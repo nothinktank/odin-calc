@@ -45,11 +45,11 @@ function operand(num){
 function operator(input){
   if (String(firstAppendage).length === 0){
     return;
-  }else if (operationType === ""){
+  }else if (operationType === "" || secondAppendage.length === 0){
     operationType = input;
     //finalFirstNum = firstAppendage;
     console.log(`first operator ${operationType} pressed `);
-  }else{
+  }else {
     switch (operationType){
       case 'plus': 
         
