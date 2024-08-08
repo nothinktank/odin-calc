@@ -7,6 +7,36 @@ let result = 0;
 
 
 function operand(num){
+  //if num is a ".", check firstAppendage and secondAppendage if it already has another "."
+  //if it doesnt, run the code below
+  //if it does, add nothing to firstAppendage or secondAppendage
+if (num === '.'){
+  if (operationType === ""){
+    if (String(firstAppendage).includes(num)){
+      firstAppendage += "";
+      display.textContent = `${firstAppendage}`;
+    }else{
+      firstAppendage += num;
+      display.textContent = `${firstAppendage}`;
+      console.log("first number pressed")
+    }
+
+  } else if (operationType === "equal"){
+      firstAppendage = "";
+      firstAppendage += num;
+        display.textContent = `${firstAppendage}`;
+      console.log("result as first number recorded")
+}else{
+  if (String(secondAppendage).includes(num)){
+    secondAppendage =+ "";
+    display.textContent = `${secondAppendage}`;
+  }else{
+    secondAppendage += num;
+    display.textContent =  `${secondAppendage}`;
+    console.log(`first appended number is ${firstAppendage}`)
+  }
+}
+}else{
   if (operationType === ""){
     firstAppendage += num;
     display.textContent = `${firstAppendage}`;
@@ -17,11 +47,10 @@ function operand(num){
     display.textContent = `${firstAppendage}`;
     console.log("result as first number recorded")
   }else{
-    secondAppendage += num
+    secondAppendage += num;
     display.textContent =  `${secondAppendage}`;
-    //numForOperation = firstAppendage;
-    //firstAppendage = "";
     console.log(`first appended number is ${firstAppendage}`)
+    }
   }
 }
 
@@ -203,6 +232,6 @@ function percent(){
 
   }
 
-  
+
 }
 
