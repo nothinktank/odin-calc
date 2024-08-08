@@ -202,5 +202,7 @@ function percent(){
   }else if (operationType.length === 0){
 
   }
+
+  
 }
 
