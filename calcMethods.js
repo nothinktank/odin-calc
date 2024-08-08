@@ -1,38 +1,21 @@
-// function add(a,b){
-//  return a + b
-// }
-
-// function subtract(a,b){
-//   return a - b
-// }
-
-// function multiply(a,b){
-//   return a * b
-// }
-
-// function divide(a,b){
-//   return a / b
-// }
-
 let display = document.querySelector(".display");
 
 let firstAppendage = "";
 let operationType = "";
 let secondAppendage = "";
-//let numForOperation = "";
 let result = 0;
-//let finalFirstNum;
 
-// firstNumber.addEventListener("click", () => {
-//   console.log('a button is clicked')
-//   display.textContent = firstNumber.textContent;
-// })
 
 function operand(num){
   if (operationType === ""){
-  firstAppendage += num;
-  display.textContent = `${firstAppendage}`;
-  console.log("first number pressed")
+    firstAppendage += num;
+    display.textContent = `${firstAppendage}`;
+    console.log("first number pressed")
+  } else if (operationType === "equal"){
+    firstAppendage = "";
+    firstAppendage += num;
+    display.textContent = `${firstAppendage}`;
+    console.log("result as first number recorded")
   }else{
     secondAppendage += num
     display.textContent =  `${secondAppendage}`;
@@ -43,13 +26,19 @@ function operand(num){
 }
 
 function operator(input){
-  if (String(firstAppendage).length === 0){
-    return;
-  }else if (operationType === "" || secondAppendage.length === 0){
+  // if (String(firstAppendage).length === 0){
+  //   return;
+  // }else 
+  if (operationType === "" || secondAppendage.length === 0 || operationType === "equal"){
     operationType = input;
     //finalFirstNum = firstAppendage;
     console.log(`first operator ${operationType} pressed `);
   }else {
+    //because there's a chance that user may hit equal multiple times and then hit an operator after, 
+    //the operator is expected to execute with the result from previous equal sign pressed
+    //if secondappendage is not yet entered, then we need to store firstAppendage for the operator
+    //pressed after the equal sign and displayed result, so displayed result needs to be the new firstAppendage
+
     switch (operationType){
       case 'plus': 
         
@@ -105,6 +94,14 @@ function operator(input){
         console.log("displayed number sign flipped");
 
         break;
+        // case "percent": 
+        // console.log(`first num is ${firstAppendage} and second num is ${secondAppendage}`);
+        // // if firstAppendage.
+
+        // operationType = input;
+        // console.log("displayed number sign flipped");
+
+        // break;
     
     }
 
@@ -123,32 +120,35 @@ function allclear(){
 }
 
 function equal(){
-  switch (operationType){
+  if (secondAppendage.length != 0){
+    switch (operationType){
     case "plus": 
       result = Number(firstAppendage) + Number(secondAppendage);
+      firstAppendage = result;
       display.textContent = `${result}`;
-      console.log("adding executed");
-      //assign secondAppendage to finalFirstNum and clear secondAppendage
-      finalFirstNum = result;
       secondAppendage = "";
+      console.log("adding executed");
       break;
     case 'subtract': 
       result = Number(firstAppendage) - Number(secondAppendage);
+      firstAppendage = result;
       display.textContent = `${result}`;
-      finalFirstNum = result;
       secondAppendage = "";
+      console.log("subtracting executed");
       break;
     case "times": 
       result = Number(firstAppendage) * Number(secondAppendage);
+      firstAppendage = result;
       display.textContent = `${result}`;
-      finalFirstNum = result;
       secondAppendage = "";
+      console.log("multiplying executed");
       break;
     case "divide": 
       result = Number(firstAppendage) / Number(secondAppendage);
+      firstAppendage = result;
       display.textContent = `${result}`;
-      finalFirstNum = result;
       secondAppendage = "";
+      console.log("dividing executed");
       break;
     case "flipSign": 
       // result = -(Number(secondAppendage));
@@ -159,33 +159,48 @@ function equal(){
       break;
       //default:
 
+    }
+  }else{
+    operationType = "equal";
+    console.log('this equal has no effect')
+    //operand();
   }
+
+
+  
 
 }
 
 
-
+//flipSign incomplete, bugs after clicking operator, resets to 0
 
 function flipSign(){
-  if (String(firstAppendage).length === 0){
+  if (String(secondAppendage).length === 0){
     firstAppendage = -(Number(firstAppendage));
-    //firstAppendage = result;
     display.textContent = `${firstAppendage}`;
-    //operationType = "flipSign";
-  }else{
-    // if (secondAppendage.length === 0){
-    //   firstAppendage = -firstAppendage;
-    //   display.textContent = `${firstAppendage}`;
-    //   operationType = "flipSign";
-    // }else{
-    //   secondAppendage = -secondAppendage;
-    //   display.textContent = `${secondAppendage}`;
-    //   operationType = "flipSign";
-    // }
+   
+  }else if (operationType.length != 0 ){
     
-    secondAppendage = -(Number(secondAppendage));
+    secondAppendage = -(Number(result));
     display.textContent = `${secondAppendage}`;
     
+  }else if (operationType.length === 0){
+
+  }
+}
+
+function percent(){
+  if (String(secondAppendage).length === 0){
+    firstAppendage =  (Number(firstAppendage)) / 100;
+    display.textContent = `${firstAppendage}`;
+   
+  }else if (operationType.length != 0 ){
+    
+    secondAppendage = (Number(result)) / 100;
+    display.textContent = `${secondAppendage}`;
+    
+  }else if (operationType.length === 0){
+
   }
 }
 
