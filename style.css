@@ -8,8 +8,8 @@
  
  .maincolumn{
    display: flex;
-   width: 41.6vw;
-   height: 60vh;
+   width: 70%;
+   height: 60%;
    flex-wrap: wrap;
    /*flex-direction: column;*/
    /*background-color: dodgerblue;*/
@@ -28,7 +28,7 @@
 
  .display{
   display: flex;
-  width: 40vw;
+  width: 95%;
   height: 3vw;
   padding: 15px;
   background-color: aliceblue;
@@ -41,18 +41,19 @@
  }
 
  button{
+  
   font-size: x-large;
   
  }
  
  .regularbutton{
-  width: 10vw;;
-  margin: 0.2vw;
+  width: 24.6%;
+  margin: 0.2%;
   height: 10vh;
  }
 
  .doublebutton{
-  width: 20.4vw;
-  margin: 0.2vw;
+  width: 49.6%;
+  margin: 0.2%;
   height: 10vh;
  }
