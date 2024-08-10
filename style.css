@@ -21,7 +21,7 @@ html, body {
    /*background-color: dodgerblue;*/
    border: medium solid black;
    border-radius: 7px;
-   padding: 0.8%;
+   padding: 0.2%;
    background-color: beige;
    padding-bottom: 1%;
    /*padding-bottom: 1.4vw;*/
@@ -50,7 +50,8 @@ html, body {
  button{
   
   font-size: x-large;
-  
+  border-radius: 5px;
+  border: thin solid gray;
  }
  
  .regularbutton{
