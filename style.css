@@ -55,13 +55,25 @@ html, body {
  }
  
  .regularbutton{
-  width: 24.2%;
+  width: 24.6%;
   margin: 0.2%;
   height: 10%;
  }
 
  .doublebutton{
-  width: 48.8%;
+  width: 49.6%;
   margin: 0.2%;
   height: 10%;
+ }
+
+ @media (max-width: 390px) {
+  button{
+    font-size: large;
+    border: thin solid orange;
+   }
+   .regularbutton{
+    width: 24.6%;
+    margin: 0.2%;
+    height: 10%;
+   }
  }
