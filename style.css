@@ -69,7 +69,7 @@ html, body {
  @media (max-width: 390px) {
   button{
     font-size: large;
-    border: thin solid orange;
+    border: thin solid gray;
    }
    .regularbutton{
     width: 24.6%;
