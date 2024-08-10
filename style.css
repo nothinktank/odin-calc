@@ -1,14 +1,20 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
 .shell{
   display: flex;
   background-color: aliceblue;
   justify-content: center;
   padding: 20%;
+  padding-bottom: 80%;
   /*border: medium solid black;*/
  }
  
  .maincolumn{
    display: flex;
-   width: 70%;
+   width: 80%;
    height: 60%;
    flex-wrap: wrap;
    /*flex-direction: column;*/
@@ -20,13 +26,13 @@
    padding-bottom: 1%;
    /*padding-bottom: 1.4vw;*/
   }
- 
+ /*
  .sidecolumn{
 
    display: flex;
 
  }
-
+*/
  .display{
   display: flex;
   width: 95%;
