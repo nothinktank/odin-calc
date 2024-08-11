@@ -22,7 +22,7 @@ if (num === '.'){
     }
 
   } else if (operationType === "equal"){
-      firstAppendage = "";
+      //firstAppendage = "";
       firstAppendage += num;
         display.textContent = `${firstAppendage}`;
       console.log("result as first number recorded")
@@ -38,11 +38,11 @@ if (num === '.'){
 }
 }else{
   if (operationType === ""){
-    firstAppendage += num;
+    firstAppendage = String(firstAppendage) + num;
     display.textContent = `${firstAppendage}`;
     console.log("first number pressed")
   } else if (operationType === "equal"){
-    firstAppendage = "";
+    //firstAppendage = "";
     firstAppendage += num;
     display.textContent = `${firstAppendage}`;
     console.log("result as first number recorded")
@@ -153,30 +153,38 @@ function equal(){
     switch (operationType){
     case "plus": 
       result = Number(firstAppendage) + Number(secondAppendage);
-      firstAppendage = result;
+      //firstAppendage = result;
       display.textContent = `${result}`;
-      secondAppendage = "";
+      firstAppendage = ""; //new code
+      secondAppendage = ""; 
+      operationType = ""; //new code
       console.log("adding executed");
       break;
     case 'subtract': 
       result = Number(firstAppendage) - Number(secondAppendage);
-      firstAppendage = result;
+      //firstAppendage = result;
       display.textContent = `${result}`;
+      firstAppendage = ""; //new code
       secondAppendage = "";
+      operationType = "";
       console.log("subtracting executed");
       break;
     case "times": 
       result = Number(firstAppendage) * Number(secondAppendage);
-      firstAppendage = result;
+      //firstAppendage = result;
       display.textContent = `${result}`;
+      firstAppendage = ""; //new code
       secondAppendage = "";
+      operationType = "";
       console.log("multiplying executed");
       break;
     case "divide": 
       result = Number(firstAppendage) / Number(secondAppendage);
-      firstAppendage = result;
+      //firstAppendage = result;
       display.textContent = `${result}`;
+      firstAppendage = ""; //new code
       secondAppendage = "";
+      operationType = "";
       console.log("dividing executed");
       break;
     case "flipSign": 
@@ -190,7 +198,9 @@ function equal(){
 
     }
   }else{
+
     operationType = "equal";
+    firstAppendage = "";
     console.log('this equal has no effect')
     //operand();
   }
@@ -201,35 +211,46 @@ function equal(){
 }
 
 
-//flipSign incomplete, bugs after clicking operator, resets to 0
-
 function flipSign(){
-  if (String(secondAppendage).length === 0){
-    firstAppendage = -(Number(firstAppendage));
-    display.textContent = `${firstAppendage}`;
+  if (operationType.length === 0 || operationType === 'equal'){
+    if (String(firstAppendage) != 0){
+      firstAppendage = - Number(firstAppendage);
+      display.textContent = `${firstAppendage}`;
+    }else{
+      result = -(Number(result));
+      display.textContent = `${result}`;
+    }
+    
+  // }else if (String(secondAppendage).length === 0){
+  //   firstAppendage = -(Number(firstAppendage));
+  //   display.textContent = `${firstAppendage}`;
    
   }else if (operationType.length != 0 ){
     
-    secondAppendage = -(Number(result));
+    secondAppendage = -(Number(secondAppendage));
     display.textContent = `${secondAppendage}`;
-    
-  }else if (operationType.length === 0){
-
   }
 }
 
 function percent(){
-  if (String(secondAppendage).length === 0){
+  if (operationType.length === 0 || operationType === 'equal'){
+    if (String(firstAppendage) != 0){
+      firstAppendage = Number(firstAppendage)/100;
+      display.textContent = `${firstAppendage}`;
+    }else{
+      result = result / 100;
+      display.textContent = `${result}`;
+    }
+    
+  }else if (String(secondAppendage).length === 0){
     firstAppendage =  (Number(firstAppendage)) / 100;
     display.textContent = `${firstAppendage}`;
    
   }else if (operationType.length != 0 ){
     
-    secondAppendage = (Number(result)) / 100;
+    secondAppendage = (Number(secondAppendage)) / 100;
     display.textContent = `${secondAppendage}`;
     
-  }else if (operationType.length === 0){
-
   }
 
 
