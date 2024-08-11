@@ -153,36 +153,36 @@ function equal(){
     switch (operationType){
     case "plus": 
       result = Number(firstAppendage) + Number(secondAppendage);
-      //firstAppendage = result;
+      firstAppendage = result;
       display.textContent = `${result}`;
-      firstAppendage = ""; //new code
+      //firstAppendage = ""; //new code
       secondAppendage = ""; 
       operationType = ""; //new code
       console.log("adding executed");
       break;
     case 'subtract': 
       result = Number(firstAppendage) - Number(secondAppendage);
-      //firstAppendage = result;
+      firstAppendage = result;
       display.textContent = `${result}`;
-      firstAppendage = ""; //new code
+      //firstAppendage = ""; //new code
       secondAppendage = "";
       operationType = "";
       console.log("subtracting executed");
       break;
     case "times": 
       result = Number(firstAppendage) * Number(secondAppendage);
-      //firstAppendage = result;
+      firstAppendage = result;
       display.textContent = `${result}`;
-      firstAppendage = ""; //new code
+      //firstAppendage = ""; //new code
       secondAppendage = "";
       operationType = "";
       console.log("multiplying executed");
       break;
     case "divide": 
       result = Number(firstAppendage) / Number(secondAppendage);
-      //firstAppendage = result;
+      firstAppendage = result;
       display.textContent = `${result}`;
-      firstAppendage = ""; //new code
+      //firstAppendage = ""; //new code
       secondAppendage = "";
       operationType = "";
       console.log("dividing executed");
